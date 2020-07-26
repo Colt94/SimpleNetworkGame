@@ -12,14 +12,7 @@ public class KeyInputs extends KeyAdapter{
 	private boolean down = false;
 	private boolean right = false;
 	private boolean left = false;
-	private enum directions {
-		  UP,
-		  DOWN,
-		  LEFT,
-		  RIGHT,
-		  NONE,
-		}
-	private directions currentDirection = directions.NONE;
+	
 	boolean remote;
 			
 	public KeyInputs(Dot d, boolean remote) {

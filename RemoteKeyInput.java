@@ -23,11 +23,13 @@ public class RemoteKeyInput extends KeyAdapter {
 		
 		if (key == KeyEvent.VK_UP && down == false) {
 			dot.changeYDir(-1);
+			client.ClientWrite("cyn1");
 			up = true;
 			//currentDirection = directions.UP;
 		}
 		if (key == KeyEvent.VK_DOWN && up == false) {
 			dot.changeYDir(1);
+			client.ClientWrite("cy1");
 			down = true;
 		}
 		if (key == KeyEvent.VK_W && down == false) {
@@ -41,10 +43,12 @@ public class RemoteKeyInput extends KeyAdapter {
 		
 		if (key == KeyEvent.VK_RIGHT && left == false) {
 			dot.changeXDir(1);
+			client.ClientWrite("cx1");
 			right = true;
 		}
 		if (key == KeyEvent.VK_LEFT && right == false) {
 			dot.changeXDir(-1);
+			client.ClientWrite("cxn1");
 			left = true;
 		}
 	}
