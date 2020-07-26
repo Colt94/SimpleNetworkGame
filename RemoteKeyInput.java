@@ -21,36 +21,31 @@ public class RemoteKeyInput extends KeyAdapter {
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
 		
-		if (key == KeyEvent.VK_UP) {
+		if (key == KeyEvent.VK_UP && down == false) {
 			dot.changeYDir(-1);
 			up = true;
-			client.ClientWrite("cyn1");
+			//currentDirection = directions.UP;
 		}
-		if (key == KeyEvent.VK_DOWN) {
+		if (key == KeyEvent.VK_DOWN && up == false) {
 			dot.changeYDir(1);
 			down = true;
-			client.ClientWrite("cy1");
 		}
-		if (key == KeyEvent.VK_W) {
+		if (key == KeyEvent.VK_W && down == false) {
 			dot.changeYDir(-1);
 			up = true;
-			client.ClientWrite("cyn1");
 		}	
-		if (key == KeyEvent.VK_S) {
+		if (key == KeyEvent.VK_S && up == false) {
 			dot.changeYDir(1);
 			down = true;
-			client.ClientWrite("cy1");
 		}
 		
-		if (key == KeyEvent.VK_RIGHT) {
+		if (key == KeyEvent.VK_RIGHT && left == false) {
 			dot.changeXDir(1);
 			right = true;
-			client.ClientWrite("cx1");
 		}
-		if (key == KeyEvent.VK_LEFT) {
+		if (key == KeyEvent.VK_LEFT && right == false) {
 			dot.changeXDir(-1);
 			left = true;
-			client.ClientWrite("cxn1");
 		}
 	}
 	
