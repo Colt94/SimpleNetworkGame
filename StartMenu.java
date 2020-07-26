@@ -86,6 +86,7 @@ public class StartMenu extends Canvas implements ActionListener {
 			System.out.print("Waiting on other player..\n");
 	        String r = c.ClientRead(); // block until both players are connected
 	        System.out.print(r);
+	        c.ClientRead();
 	        String[] startPositions = r.split(",");
 	        RemoteFreeSpace fs = new RemoteFreeSpace(c,  Integer.parseInt(startPositions[0]), Integer.parseInt(startPositions[1]));	
 	        (new Thread(new HandleDotState(fs,c,fs.d2))).start();
