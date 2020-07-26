@@ -49,9 +49,12 @@ public class Dot {
 		else if (y <= 0) y = FreeSpace.HEIGHT - SIZE;
 	}
 	
-	public void stop() {
+	public void stopx() {
 		xVelocity = 0;
-		yVelocity = 0;
+		//yVelocity = 0;
 	}
 	
+	public void stopy() {
+		yVelocity = 0;
+	}
 }

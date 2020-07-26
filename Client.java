@@ -105,16 +105,16 @@ class HandleDotState implements Runnable {
 				dot.changeXDir(-1);
 			}
 			if(move.equals("stopUp")) {
-				dot.stop();
+				dot.stopy();
 			}
 			if(move.equals("stopDown")) {
-				dot.stop();
+				dot.stopy();
 			}
 			if(move.equals("stopRight")) {
-				dot.stop();
+				dot.stopx();
 			}
 			if(move.equals("stopLeft")) {
-				dot.stop();
+				dot.stopx();
 			}
 			client.ClientWrite("confirm");
 			

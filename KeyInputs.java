@@ -72,7 +72,10 @@ public class KeyInputs extends KeyAdapter{
 		if (key == KeyEvent.VK_LEFT) {
 			left = false;
 		}
-		if (!up && !down && !right && !left)
-			dot.stop();
+		if (!up && !down)
+			dot.stopy();
+		if (!right && !left) {
+			dot.stopx();
+		}
 	}
 }
