@@ -12,7 +12,14 @@ public class KeyInputs extends KeyAdapter{
 	private boolean down = false;
 	private boolean right = false;
 	private boolean left = false;
-	
+	private enum directions {
+		  UP,
+		  DOWN,
+		  LEFT,
+		  RIGHT,
+		  NONE,
+		}
+	private directions currentDirection = directions.NONE;
 	boolean remote;
 			
 	public KeyInputs(Dot d, boolean remote) {
@@ -23,28 +30,29 @@ public class KeyInputs extends KeyAdapter{
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
 		
-		if (key == KeyEvent.VK_UP) {
+		if (key == KeyEvent.VK_UP && down == false) {
 			dot.changeYDir(-1);
 			up = true;
+			//currentDirection = directions.UP;
 		}
-		if (key == KeyEvent.VK_DOWN) {
+		if (key == KeyEvent.VK_DOWN && up == false) {
 			dot.changeYDir(1);
 			down = true;
 		}
-		if (key == KeyEvent.VK_W) {
+		if (key == KeyEvent.VK_W && down == false) {
 			dot.changeYDir(-1);
 			up = true;
 		}	
-		if (key == KeyEvent.VK_S) {
+		if (key == KeyEvent.VK_S && up == false) {
 			dot.changeYDir(1);
 			down = true;
 		}
 		
-		if (key == KeyEvent.VK_RIGHT) {
+		if (key == KeyEvent.VK_RIGHT && left == false) {
 			dot.changeXDir(1);
 			right = true;
 		}
-		if (key == KeyEvent.VK_LEFT) {
+		if (key == KeyEvent.VK_LEFT && right == false) {
 			dot.changeXDir(-1);
 			left = true;
 		}
