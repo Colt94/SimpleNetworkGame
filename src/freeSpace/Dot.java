@@ -27,7 +27,8 @@ public class Dot {
 	
 	public void draw(Graphics g) {
 		g.setColor(this.color);
-		g.fillRect(x, y, SIZE, SIZE);	
+		//g.fillRect(x, y, SIZE, SIZE);
+		g.fillOval(x, y, SIZE, SIZE);
 	}
 	
 	public void changeXDir(int dir) {
