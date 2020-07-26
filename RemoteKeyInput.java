@@ -59,32 +59,35 @@ public class RemoteKeyInput extends KeyAdapter {
 		
 		if (key == KeyEvent.VK_UP) {
 			up = false;
-			client.ClientWrite("stopUp");
+			//client.ClientWrite("stopUp");
 		}
 		if (key == KeyEvent.VK_DOWN) {
 			down = false;
-			client.ClientWrite("stopDown");
+			//client.ClientWrite("stopDown");
 		}
 		if (key == KeyEvent.VK_W) {
 			up = false;
-			client.ClientWrite("stopUp");
+			//client.ClientWrite("stopUp");
 		}	
 		if (key == KeyEvent.VK_S) {
 			down = false;
-			client.ClientWrite("stopDown");
+			//client.ClientWrite("stopDown");
 		}
 		if (key == KeyEvent.VK_RIGHT) {
 			right = false;
-			client.ClientWrite("stopRight");
+			//client.ClientWrite("stopRight");
 		}
 		if (key == KeyEvent.VK_LEFT) {
 			left = false;
-			client.ClientWrite("stopLeft");
+			//client.ClientWrite("stopLeft");
 		}
-		if (!up && !down)
+		if (!up && !down) {
 			dot.stopy();
+			client.ClientWrite("stopUp");
+		}
 		if (!right && !left) {
 			dot.stopx();
+			client.ClientWrite("stopRight");
 		}
 	}
 }
