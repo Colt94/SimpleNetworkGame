@@ -118,19 +118,19 @@ class HandleDotState implements Runnable {
 			if(move.equals("cxn1")) {
 				dot.changeXDir(-1);
 			}
-			if(move.equals("stopUp")) {
-				dot.stopy();
-			}
-			if(move.equals("stopDown")) {
-				dot.stopy();
-			}
+//			if(move.equals("stopUp")) {
+//				dot.stopy();
+//			}
+//			if(move.equals("stopDown")) {
+//				dot.stopy();
+//			}
 			if(move.equals("stopX")) {
 				dot.stopx();
-				client.ClientWrite("x" + Integer.toString(dot.getX()));
+				//client.ClientWrite("x" + Integer.toString(dot.getX()));
 			}
 			if(move.equals("stopY")) {
 				dot.stopy();
-				client.ClientWrite("y" + Integer.toString(dot.getY()));
+				//client.ClientWrite("y" + Integer.toString(dot.getY()));
 			}
 			client.ClientWrite("confirm");
 			
