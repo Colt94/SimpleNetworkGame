@@ -91,7 +91,21 @@ class HandleDotState implements Runnable {
 				e.printStackTrace();
 			}
 			String move = client.ClientRead();
-			//System.out.printf("%s Recieved\n", move);
+			System.out.printf("%s Recieved\n", move);
+			if(move.substring(0) == "y") {
+				int y = Integer.parseInt((String) move.subSequence(1, move.length()));
+				if(y != dot.getY()) {
+					dot.setY(y);
+					System.out.print(y);
+				}
+			}
+			if(move.substring(0) == "x") {
+				int x = Integer.parseInt((String) move.subSequence(1, move.length()));
+				if(x != dot.getX()) {
+					dot.setX(x);
+					System.out.print(x);
+				}
+			}
 			if(move.equals("cyn1")) {
 				dot.changeYDir(-1);
 			}
@@ -110,16 +124,30 @@ class HandleDotState implements Runnable {
 			if(move.equals("stopDown")) {
 				dot.stopy();
 			}
-			if(move.equals("stopRight")) {
+			if(move.equals("stopX")) {
 				dot.stopx();
+				client.ClientWrite("x" + Integer.toString(dot.getX()));
 			}
-			if(move.equals("stopLeft")) {
-				dot.stopx();
+			if(move.equals("stopY")) {
+				dot.stopy();
+				client.ClientWrite("y" + Integer.toString(dot.getY()));
 			}
 			client.ClientWrite("confirm");
 			
 		}
 		
+	}
+	
+	public static boolean isNumeric(String strNum) {
+	    if (strNum == null) {
+	        return false;
+	    }
+	    try {
+	        double d = Double.parseDouble(strNum);
+	    } catch (NumberFormatException nfe) {
+	        return false;
+	    }
+	    return true;
 	}
 	
 }

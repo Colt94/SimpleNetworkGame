@@ -83,11 +83,11 @@ public class RemoteKeyInput extends KeyAdapter {
 		}
 		if (!up && !down) {
 			dot.stopy();
-			client.ClientWrite("stopUp");
+			client.ClientWrite("stopY");
 		}
 		if (!right && !left) {
 			dot.stopx();
-			client.ClientWrite("stopRight");
+			client.ClientWrite("stopX");
 		}
 	}
 }
