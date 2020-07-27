@@ -92,18 +92,23 @@ class HandleDotState implements Runnable {
 			}
 			String move = client.ClientRead();
 			System.out.printf("%s Recieved\n", move);
-			if(move.substring(0) == "y") {
+			String coordCheck = move.substring(0, 1);
+			System.out.print("\n" + coordCheck + "\n");
+			if(coordCheck.equals("y")) {
 				int y = Integer.parseInt((String) move.subSequence(1, move.length()));
+				int y2 = dot.getY();
+				System.out.printf("R dot: %s", y);
+				System.out.printf("my dot: %s", y2);
 				if(y != dot.getY()) {
 					dot.setY(y);
-					System.out.print(y);
+					System.out.print("Y adjusted");
 				}
 			}
-			if(move.substring(0) == "x") {
+			if(coordCheck.equals("x")) {
 				int x = Integer.parseInt((String) move.subSequence(1, move.length()));
 				if(x != dot.getX()) {
 					dot.setX(x);
-					System.out.print(x);
+					System.out.print("X adjusted");
 				}
 			}
 			if(move.equals("cyn1")) {
