@@ -61,16 +61,19 @@ public class Dot {
 		g.setColor(this.color);
 		//g.fillRect(x, y, SIZE, SIZE);
 		g.fillOval(x, y, SIZE, SIZE);
-		if(moving) {
-			client.ClientWrite(Integer.toString(x) + ',' + Integer.toString(y));
-		}
+//		if(moving) {
+//			client.ClientWrite(Integer.toString(x) + ',' + Integer.toString(y));
+//			//System.out.print("MOVING");
+//		}
 	}
 	
 	public void changeXDir(int dir) {
+		moving = true;
 		xVelocity = dir * speed;
 	}
 	
 	public void changeYDir(int dir) {
+		moving = true;
 		yVelocity = dir * speed;
 	}
 	
@@ -87,10 +90,12 @@ public class Dot {
 	
 	public void stopx() {
 		xVelocity = 0;
+		moving = false;
 		//yVelocity = 0;
 	}
 	
 	public void stopy() {
 		yVelocity = 0;
+		moving = false;
 	}
 }

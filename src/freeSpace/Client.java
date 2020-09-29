@@ -91,7 +91,7 @@ class HandleDotState implements Runnable {
 				e.printStackTrace();
 			}
 			String move = client.ClientRead();
-			//System.out.printf("%s Recieved\n", move);
+			System.out.printf("%s Recieved\n", move);
 			String coordCheck = move.substring(0, 1);
 			//System.out.print("\n" + coordCheck + "\n");
 			if(coordCheck.equals("y")) {
@@ -109,35 +109,35 @@ class HandleDotState implements Runnable {
 					//System.out.print("X adjusted");
 				}
 			}
-			String[] coords = move.split(",");
-			dot.setX(Integer. parseInt(coords[0]));
-			dot.setY(Integer. parseInt(coords[1]));
-//			if(move.equals("cyn1")) {
-//				dot.changeYDir(-1);
-//			}
-//			if(move.equals("cy1")) {
-//				dot.changeYDir(1);
-//			}
-//			if(move.equals("cx1")) {
-//				dot.changeXDir(1);
-//			}
-//			if(move.equals("cxn1")) {
-//				dot.changeXDir(-1);
-//			}
-////			if(move.equals("stopUp")) {
-////				dot.stopy();
-////			}
-////			if(move.equals("stopDown")) {
-////				dot.stopy();
-////			}
-//			if(move.equals("stopX")) {
-//				dot.stopx();
-//				//client.ClientWrite("x" + Integer.toString(dot.getX()));
-//			}
-//			if(move.equals("stopY")) {
+//			String[] coords = move.split(",");
+//			dot.setX(Integer. parseInt(coords[0]));
+//			dot.setY(Integer. parseInt(coords[1]));
+			if(move.equals("cyn1")) {
+				dot.changeYDir(-1);
+			}
+			if(move.equals("cy1")) {
+				dot.changeYDir(1);
+			}
+			if(move.equals("cx1")) {
+				dot.changeXDir(1);
+			}
+			if(move.equals("cxn1")) {
+				dot.changeXDir(-1);
+			}
+//			if(move.equals("stopUp")) {
 //				dot.stopy();
-//				//client.ClientWrite("y" + Integer.toString(dot.getY()));
-			//}
+//			}
+//			if(move.equals("stopDown")) {
+//				dot.stopy();
+//			}
+			if(move.equals("stopX")) {
+				dot.stopx();
+				//client.ClientWrite("x" + Integer.toString(dot.getX()));
+			}
+			if(move.equals("stopY")) {
+				dot.stopy();
+				//client.ClientWrite("y" + Integer.toString(dot.getY()));
+			}
 			client.ClientWrite("confirm");
 			
 		}
