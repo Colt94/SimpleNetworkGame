@@ -7,7 +7,8 @@ public class Dot {
 	
 	public static final int SIZE = 16;
 	private int x,y;
-	
+	private boolean moving;
+	private Client client;
 	public int getX() {
 		return x;
 	}
@@ -36,16 +37,33 @@ public class Dot {
 		this.controlledDot = controlledDot;
 		x = startX;
 		y = startY;
-		
+		moving = false;
 		xVelocity = 0;
 		yVelocity = 0;
 		this.color = c;
+	}
+	
+	public Dot(Color c, int startX, int startY, boolean controlledDot, Client client) { // remote dot
+		
+		//x = FreeSpace.WIDTH / 2 - SIZE / 2;
+		//y = FreeSpace.HEIGHT / 2 - SIZE / 2;
+		this.controlledDot = controlledDot;
+		x = startX;
+		y = startY;
+		moving = false;
+		xVelocity = 0;
+		yVelocity = 0;
+		this.color = c;
+		this.client = client;
 	}
 	
 	public void draw(Graphics g) {
 		g.setColor(this.color);
 		//g.fillRect(x, y, SIZE, SIZE);
 		g.fillOval(x, y, SIZE, SIZE);
+		if(moving) {
+			client.ClientWrite(Integer.toString(x) + ',' + Integer.toString(y));
+		}
 	}
 	
 	public void changeXDir(int dir) {

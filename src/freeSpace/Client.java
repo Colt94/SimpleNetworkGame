@@ -109,32 +109,35 @@ class HandleDotState implements Runnable {
 					//System.out.print("X adjusted");
 				}
 			}
-			if(move.equals("cyn1")) {
-				dot.changeYDir(-1);
-			}
-			if(move.equals("cy1")) {
-				dot.changeYDir(1);
-			}
-			if(move.equals("cx1")) {
-				dot.changeXDir(1);
-			}
-			if(move.equals("cxn1")) {
-				dot.changeXDir(-1);
-			}
-//			if(move.equals("stopUp")) {
-//				dot.stopy();
+			String[] coords = move.split(",");
+			dot.setX(Integer. parseInt(coords[0]));
+			dot.setY(Integer. parseInt(coords[1]));
+//			if(move.equals("cyn1")) {
+//				dot.changeYDir(-1);
 //			}
-//			if(move.equals("stopDown")) {
-//				dot.stopy();
+//			if(move.equals("cy1")) {
+//				dot.changeYDir(1);
 //			}
-			if(move.equals("stopX")) {
-				dot.stopx();
-				//client.ClientWrite("x" + Integer.toString(dot.getX()));
-			}
-			if(move.equals("stopY")) {
-				dot.stopy();
-				//client.ClientWrite("y" + Integer.toString(dot.getY()));
-			}
+//			if(move.equals("cx1")) {
+//				dot.changeXDir(1);
+//			}
+//			if(move.equals("cxn1")) {
+//				dot.changeXDir(-1);
+//			}
+////			if(move.equals("stopUp")) {
+////				dot.stopy();
+////			}
+////			if(move.equals("stopDown")) {
+////				dot.stopy();
+////			}
+//			if(move.equals("stopX")) {
+//				dot.stopx();
+//				//client.ClientWrite("x" + Integer.toString(dot.getX()));
+//			}
+//			if(move.equals("stopY")) {
+//				dot.stopy();
+//				//client.ClientWrite("y" + Integer.toString(dot.getY()));
+			//}
 			client.ClientWrite("confirm");
 			
 		}

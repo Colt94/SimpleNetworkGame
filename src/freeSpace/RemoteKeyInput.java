@@ -23,13 +23,13 @@ public class RemoteKeyInput extends KeyAdapter {
 		
 		if (key == KeyEvent.VK_UP && down == false) {
 			dot.changeYDir(-1);
-			client.ClientWrite("cyn1");
+			//client.ClientWrite("cyn1");
 			up = true;
 			//currentDirection = directions.UP;
 		}
 		if (key == KeyEvent.VK_DOWN && up == false) {
 			dot.changeYDir(1);
-			client.ClientWrite("cy1");
+			//client.ClientWrite("cy1");
 			down = true;
 		}
 		if (key == KeyEvent.VK_W && down == false) {
@@ -43,12 +43,12 @@ public class RemoteKeyInput extends KeyAdapter {
 		
 		if (key == KeyEvent.VK_RIGHT && left == false) {
 			dot.changeXDir(1);
-			client.ClientWrite("cx1");
+			//client.ClientWrite("cx1");
 			right = true;
 		}
 		if (key == KeyEvent.VK_LEFT && right == false) {
 			dot.changeXDir(-1);
-			client.ClientWrite("cxn1");
+			//client.ClientWrite("cxn1");
 			left = true;
 		}
 	}
@@ -84,14 +84,14 @@ public class RemoteKeyInput extends KeyAdapter {
 		if (!up && !down) {
 			dot.stopy();
 			System.out.print("Stopping y\n");
-			client.ClientWrite("stopY");
-			client.ClientWrite("y" + Integer.toString(dot.getY()));
+			//client.ClientWrite("stopY");
+			//client.ClientWrite("y" + Integer.toString(dot.getY()));
 		}
 		if (!right && !left) {
 			dot.stopx();
 			System.out.print("Stopping x\n");
-			client.ClientWrite("stopX");
-			client.ClientWrite("x" + Integer.toString(dot.getX()));
+			//client.ClientWrite("stopX");
+			//client.ClientWrite("x" + Integer.toString(dot.getX()));
 		}
 	}
 }

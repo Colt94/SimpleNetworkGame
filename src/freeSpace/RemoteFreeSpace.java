@@ -34,7 +34,7 @@ public class RemoteFreeSpace extends Canvas implements Runnable, ActionListener 
 		this.client = client;
 		int x = FreeSpace.HEIGHT / 2;
 		int y = FreeSpace.HEIGHT - 100;
-		d1 = new Dot(Color.white,dot1Start,dot1Start,true); // my dot
+		d1 = new Dot(Color.white,dot1Start,dot1Start,true,this.client); // my dot
 		d2 = new Dot(Color.green,dot2Start,dot2Start,false); // other player's dot
 		canvasSetup();
 		AppWindow w = new AppWindow("FreeSpace", this);
